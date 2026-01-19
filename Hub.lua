@@ -692,11 +692,11 @@ Settings:AddToggle({ "Disable Game Notify", false })
 Settings:AddToggle({ "No Fog", false, function(state)
     local lighting = game:GetService("Lighting")
     if state then
-        lighting.Fog.FogStart = 0
-        lighting.Fog.FogEnd = 999999
+        lighting.FogStart = 0
+        lighting.FogEnd = 999999
     else
-        lighting.Fog.FogStart = 0
-        lighting.Fog.FogEnd = 500
+        lighting.FogStart = 0
+        lighting.FogEnd = 500
     end
 end })
 
