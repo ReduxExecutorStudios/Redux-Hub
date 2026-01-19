@@ -670,9 +670,9 @@ Settings:AddToggle({ "Auto Turn V3", false })
 Settings:AddToggle({ "Auto Turn V4", false })
 
 Settings:AddSection("Extras 🎉")
-Settings:AddToggle({ "Auto Speed", true })
+Settings:AddToggle({ "Auto Speed", false })
 Settings:AddSlider({ "Speed", Min = 20, Max = 100, Default = 20 })
-Settings:AddToggle({ "Auto Set Jump", true })
+Settings:AddToggle({ "Auto Set Jump", false })
 Settings:AddSlider({ "Jump", Min = 50, Max = 200, Default = 50 })
 
 local AntiAFKEnabled = false
@@ -831,4 +831,5 @@ redzlib:Notify({
     Type = "success",
     Time = 4
 })
+
 
