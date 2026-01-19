@@ -689,15 +689,14 @@ end })
 
 Settings:AddSection("Visual")
 Settings:AddToggle({ "Disable Game Notify", false })
-local NoFogToggle = Settings:AddToggle({ "No Fog", false, function(state)
+Settings:AddToggle({ "No Fog", false, function(state)
+    local lighting = game:GetService("Lighting")
     if state then
-        local lighting = game:GetService("Lighting")
         lighting.Fog.FogStart = 0
-        lighting.Fog.FogEnd = 9999999
+        lighting.Fog.FogEnd = 999999
     else
-        local lighting = game:GetService("Lighting")
         lighting.Fog.FogStart = 0
-        lighting.Fog.FogEnd = 0
+        lighting.Fog.FogEnd = 500
     end
 end })
 
