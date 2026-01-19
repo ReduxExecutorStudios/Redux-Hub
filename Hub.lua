@@ -342,15 +342,17 @@ local pRip = Home:AddParagraph({ "Rip Indra Spawn", "Loading..." })
 -- FULL MOON SYSTEM
 -- ======================================================
 
-local MoonCycle = 40 * 60
+local MoonCycle = 20 * 60
 local FullMoonPhase = 5
 
 local function UpdateMoon()
     local serverTime = workspace.DistributedGameTime
     local phase = math.floor((serverTime % MoonCycle) / (MoonCycle / FullMoonPhase)) + 1
+    
+    phase = math.clamp(phase, 1, 5)
 
-    if phase >= FullMoonPhase then
-        pMoon:Set("5/5 (Full Moon)")
+    if phase == FullMoonPhase then
+        pMoon:Set("5/5 (Full Moon) 🌕")
     else
         pMoon:Set(phase .. "/5")
     end
