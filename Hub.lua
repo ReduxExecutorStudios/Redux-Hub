@@ -676,7 +676,7 @@ Settings:AddToggle({ "Auto Set Jump", true })
 Settings:AddSlider({ "Jump", Min = 50, Max = 200, Default = 50 })
 
 local AntiAFKEnabled = false
-Settings:AddToggle({ "Anti AFK", false, function(state)
+Settings:AddToggle({ "Anti AFK", true, function(state)
     AntiAFKEnabled = state
     if state then
         spawn(function()
@@ -831,3 +831,4 @@ redzlib:Notify({
     Type = "success",
     Time = 4
 })
+
